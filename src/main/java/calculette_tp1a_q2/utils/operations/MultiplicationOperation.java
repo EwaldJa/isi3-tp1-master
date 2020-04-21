@@ -1,6 +1,6 @@
 package calculette_tp1a_q2.utils.operations;
 
-import calculette_tp1a_q2.utils.exceptions.Operation;
+import calculette_tp1a_q2.utils.Operation;
 
 public class MultiplicationOperation implements Operation {
 
@@ -16,7 +16,7 @@ public class MultiplicationOperation implements Operation {
      * @see #OPERATOR
      */
     public boolean matchOperator(char operator) {
-        return operator == OPERATOR;
+        return operator == getOperator();
     }
 
     /**
@@ -28,4 +28,9 @@ public class MultiplicationOperation implements Operation {
     public double calculate(double d1, double d2) {
         return d1*d2;
     }
+
+    /**
+     * @return char the operator of the multiplication operation
+     */
+    public char getOperator() { return OPERATOR; }
 }

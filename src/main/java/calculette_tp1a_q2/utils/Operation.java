@@ -1,5 +1,8 @@
-package calculette_tp1a_q2.utils.exceptions;
+package calculette_tp1a_q2.utils;
 
+/**
+ * Any class implementing Operation interface MUST have a char field named OPERATOR representing the operator of the operation
+ */
 public interface Operation {
 
     /**
@@ -7,7 +10,7 @@ public interface Operation {
      * @param operator the char to check
      * @return true if good operator, false otherwise
      */
-    public boolean matchOperator(char operator);
+    default public boolean matchOperator(char operator) { return  operator == getOperator(); }
 
     /**
      * Calculates the result of the operation
@@ -16,4 +19,9 @@ public interface Operation {
      * @return double the result of the operation
      */
     public double calculate(double d1, double d2);
+
+    /**
+     * @return char the operator of the operation
+     */
+    public char getOperator();
 }
