@@ -12,10 +12,10 @@ public class Calculette
 	public static double add(double d1, double d2) { return d1+d2; }
 
     /**
-     * Substracts d2 to d1
+     * Subtracts d2 to d1
      * @param d1 double
      * @param d2 double
-     * @return double, the result of d2 substracted to d1
+     * @return double, the result of d2 subtracted to d1
      */
     public static double substract(double d1, double d2) { return d1-d2; }
 
