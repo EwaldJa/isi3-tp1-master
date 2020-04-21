@@ -24,7 +24,7 @@ public class Calculette
     }
 
     public static double calculate(String operator, double d1, double d2) throws IncorrectOperatorException, UnsupportedOperationException {
-        return OperationFactory.getOperation(operator).calculate(d1, d2);
+        return calculate(OperationFactory.getOperation(operator), d1, d2);
     }
 
     public static double calculate(Operation operation, double d1, double d2) {
