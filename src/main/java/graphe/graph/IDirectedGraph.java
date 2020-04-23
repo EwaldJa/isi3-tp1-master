@@ -1,7 +1,6 @@
-package graphe;
+package graphe.graph;
 
 import java.util.List;
-import java.util.Set;
 
 public interface IDirectedGraph extends IGraph{
 	/**

@@ -1,4 +1,4 @@
-package graphe;
+package graphe.graph;
 
 public class DoubleLabel  implements Label {
 	double label;

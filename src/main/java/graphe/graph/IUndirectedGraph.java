@@ -1,7 +1,4 @@
-package graphe;
-
-import java.util.List;
-import java.util.Set;
+package graphe.graph;
 
 public interface IUndirectedGraph extends IGraph{
 

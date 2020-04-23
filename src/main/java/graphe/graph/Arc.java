@@ -1,4 +1,4 @@
-package graphe;
+package graphe.graph;
 
 /**
  * Classe representant une arrete orientee et valuee

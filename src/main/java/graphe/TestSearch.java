@@ -2,14 +2,13 @@ package graphe;
 
 import java.util.Iterator;
 
-import graphe.Arc;
-import graphe.Graph;
-import graphe.IDirectedGraph;
-import graphe.IGraph;
-import graphe.IUndirectedGraph;
-import graphe.Node;
-import graphe.StringLabel;
-import graphe.UndirectedGraph;
+import graphe.graph.Arc;
+import graphe.graph.Graph;
+import graphe.graph.IDirectedGraph;
+import graphe.graph.IUndirectedGraph;
+import graphe.graph.Node;
+import graphe.graph.StringLabel;
+import graphe.graph.UndirectedGraph;
 
 public class TestSearch {
 

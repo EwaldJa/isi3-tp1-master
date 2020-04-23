@@ -1,4 +1,4 @@
-package graphe;
+package graphe.graph;
 
 public interface Label {
 	public Object getLabel() ;

@@ -1,4 +1,4 @@
-package graphe;
+package graphe.graph;
 
 /**
  * Classe representant un noeud etiquete pour un graph

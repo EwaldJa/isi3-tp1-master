@@ -1,4 +1,7 @@
-package graphe;
+package graphe.graph;
+
+import graphe.search.BFSIterator;
+import graphe.search.DFSIterator;
 
 import java.util.*;
 

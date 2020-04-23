@@ -1,12 +1,12 @@
 package graphe;
 
-import graphe.Arc;
-import graphe.DoubleLabel;
-import graphe.Graph;
-import graphe.IDirectedGraph;
-import graphe.IntegerLabel;
-import graphe.Node;
-import graphe.StringLabel;
+import graphe.graph.Arc;
+import graphe.graph.DoubleLabel;
+import graphe.graph.Graph;
+import graphe.graph.IDirectedGraph;
+import graphe.graph.IntegerLabel;
+import graphe.graph.Node;
+import graphe.graph.StringLabel;
 
 public class TestGraph {
 

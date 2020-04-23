@@ -1,4 +1,7 @@
-package graphe;
+package graphe.search;
+
+import graphe.graph.IGraph;
+import graphe.graph.Node;
 
 public class BFSIterator extends ASearchAlgoIterator {
 
