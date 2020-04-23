@@ -32,7 +32,7 @@ J'aurai voulu utiliser des méthodes statiques dans les classes opérations, mai
 
 Ci-dessous, le diagramme UML correspondant à cette question.
 
-![exo-01](img/tp1a-q2.png)
+![uml_tp1a-q2](img/tp1a-q2.png)
 
 L'utilisation du **pattern Strategy** m'a demandé plus de temps pour développer ma solution initialement, mais les possibilités d'évolutions sont à la fois bien plus vastes et bien plus simples, puisque je n'ai aucun code existant à modifier pour ajouter une opération. Dans l'absolue, une évolution qui nécéssiterai de modifier un peu mon code serait de ne pas utiliser un caractère (`char`) mais une chaîne de caractères `String` pour l'opérateur, ce qui permettrait plus de flexibilité. Mais cela ne prendrait que quelques minutes.
 
