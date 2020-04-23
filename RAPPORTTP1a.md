@@ -18,6 +18,22 @@ Très simple à mettre en place (il ne m'a fallu que quelques minutes), cette ar
 ## Exercice 2
 *Expliquer le code ajouté, présentez votre solution (diagramme UML ou texte), conclusion(s) ?*
 
+Pour cette question, ma solution a nécéssité un peu plus d'architecture que la solution précédente. Toutes les classes se trouvent dans le `package calculette_tp1a_q2` et ses sous-packages.
+
+La classe `Main` sert toujours à récupérer l'input utilisateur, même si dans l'absolu il aurait fallu utiliser une classe spécifique pour le faire. Elle utilise une méthode statique de la classe `Calculette`, `supportedOperationsToString` (qui fait elle-même appel à la méthode statique `getSupportedOperators` de `OperationFactory`), pour afficher à l'utilisateur les symboles représentant les opérations implémentées actuellement. Après avoir récupéré les entrées utilisateur, elle fait appel à la méthode statique `calculate` toujours de la classe `Calculette` et lui passe les données en paramètres. Cette méthode fait elle-même appel à la méthode `getOperation` de `OperationFactory` pour récupérer une instance d'une classe implémentant l'interface `Operation` et correspondant à l'opérateur choisi par l'utilisateur (si l'opérateur ne correspond à aucune opération, une exception personnalisée est levée et un message est affiché). La méthode `calculate`de `Calculette` renvoie ensuite le résultat de l'appel à la méthode `calculate` de l'instance d'`Operation` récupérée avec pour paramètre les nombres choisis par l'utilisateur.
+
+La classe `OperationFactory` utilise la librairie `Reflections version 0.9.12`, que j'importe avec `Maven` dans mon  fichier `pom.xml`. Pour récupérer la bonne classe en fonction de l'opérateur entré par l'utilisateur et l'instancier, on parcourt toutes les classes du `sous-package operations`et qui implémentent l'interface `Operation`. On vérifie si l'opérateur défini dans chacune des classes correspondantes correspond à celui qui est passé en paramètre, et on crée un instance de la première classe trouvée qui correspond. Si l'entrée de l'utilisateur ne correspond pas (n'est pas un seul caractère, ne correspond à aucune opération...), on lève une exception personnalisée du sous-package `exceptions`, qui sera traitée plus haut. Pour récupérer les opérateurs de toutes les opération supportées, le principe est le même, sauf que l'on ne crée pas d'instance, on se contente de renvoyer un tableau avec tous les caractères.
+
+Cette solution avec la classe `OperationFactory`peut paraître un peu compliquée et un peu farfelue, mais elle présente l'avantage de n'avoir strictement aucune classe à toucher pour ajouter une nouvelle opération, rien à ajouter dans une `enum`  ou un `switch ... case` quelque part. Il suffit de copier une des classes opération existante dans le `sous-package operations`, et de la modifier pour qu'elle corresponde à l'opération que l'on souhaite ajouter (donc changer juste l'attribut `OPERATOR` et la méthode `calculate`).
+
+J'aurai voulu utiliser des méthodes statiques dans les classes opérations, mais j'ai préféré utiliser une interface qu'un héritage.
+
+Ci-dessous, le diagramme UML correspondant à cette question.
+
+![exo-01](img/tp1a-q2.png)
+
+L'utilisation du **pattern Strategy** m'a demandé plus de temps pour développer ma solution initialement, mais les possibilités d'évolutions sont à la fois bien plus vastes et bien plus simples, puisque je n'ai aucun code existant à modifier pour ajouter une opération. Dans l'absolue, une évolution qui nécéssiterai de modifier un peu mon code serait de ne pas utiliser un caractère (`char`) mais une chaîne de caractères `String` pour l'opérateur, ce qui permettrait plus de flexibilité. Mais cela ne prendrait que quelques minutes.
+
 ## Exercice 3
 *Expliquer le code ajouté: présentez votre solution (diagramme UML ou texte), conclusion(s) ?*
 
