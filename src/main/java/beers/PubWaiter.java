@@ -21,7 +21,6 @@ public class PubWaiter {
   }
 
   public double calculatePrice(Beer beer) {
-    //TODO
-    return 0.0;
+    return strategy.calculateNewPrice(beer);
   }
 }

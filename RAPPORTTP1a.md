@@ -1,4 +1,6 @@
-**Nom/Prénom Etudiant  :**
+**Nom/Prénom Etudiant  :** 
+
+Ewald JANIN
 
 
 
@@ -37,9 +39,14 @@ L'utilisation du **pattern Strategy** m'a demandé plus de temps pour développe
 ## Exercice 3
 *Expliquer le code ajouté: présentez votre solution (diagramme UML ou texte), conclusion(s) ?*
 
+J'ai complété l'interface HappyHourStrategy en ajoutant la méthode `calculateNewPrice(Beer)`, que j'ai complétée dans chacune des classes implémentant l'interface `HappyHourStrategy`. J'ai également fait en sorte que `PubWaiter` utilise cette méthode pour calculer le prix d'une bière.
+
+J'ai ajouté les classes de tests unitaires par stratégie de réduction, ajouté la classe correspondant à une réduction de 50%, et je l'ai ajoutée aux tests de la classe `HappyHourTest`.
+
 ## Votre avis sur le pattern Strategy
 *Que retirez vous de son utilisation? Est-ce que c'est utile? ...*
 
+Ce design pattern nécéssite de plus penser à la conception avant de commencer à coder, mais il permet une bonne évolutivité du code, une bonne séparation des objets (pour éviter les [God objects](https://en.wikipedia.org/wiki/God_object)). L'architecture du programme est ainsi plus claire, il est plus facile d'intervenir dans le programme après une longue période sans le toucher, et cela permet d'avoir une structure asseez facilement compréhensible par un autre développeur.
 
 ## Votre avis sur le TP et les exercices
 
@@ -47,13 +54,52 @@ L'utilisation du **pattern Strategy** m'a demandé plus de temps pour développe
 
 *Donnez votre avis*
 
+Un projet est à mon sens toujours plus intéressant que des exercices type TD pour mettre en application nos connaissances. Le fait d'être bien guidé dans ce TP est agréable, et notamment j'apprécie particulièrement le format du rapport en Markdown, beaucoup plus pratique qu'un rapport à faire sous Word, et le fait qu'il soit bien guidé est très confortable.
+
 ### Ce que vous n'avez pas aimé
 
 *Donnez votre avis*
 
+Cette partie du TP était peut-être un peu trop guidée, surtout pour la question 3, j'en ai même l'impression d'avoir loupé une consigne.
+
 ### Propositions d'améliorations
 
 *Donnez votre avis*
+
+Peut-être donner un peu plus de temps aux étudiants et les laisser développer eux-mêmes un peu plus la question 3 ?
+
+Et aussi donner en consigne le code **XML** pour importer la libraire **jUnit**, il m'a fallu un peu de temps pour y arriver, avec les différentes versions et les différents artefacts.
+
+Vous pourriez même donner directement un projet Maven aux étudiants.
+
+Dépendances à ajouter au `pom.xml` pour jUnit : 
+```
+<dependencies>
+    <dependency>
+        <groupId>org.junit.platform</groupId>
+        <artifactId>junit-platform-launcher</artifactId>
+        <version>1.6.2</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.6.2</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.vintage</groupId>
+        <artifactId>junit-vintage-engine</artifactId>
+        <version>5.6.2</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13</version>
+    </dependency>
+</dependencies>
+```
 
 
 

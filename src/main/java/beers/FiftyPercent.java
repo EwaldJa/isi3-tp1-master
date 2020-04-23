@@ -1,8 +1,8 @@
 package beers;
 
-public class NoDiscount implements HappyHourStrategy {
+public class FiftyPercent implements HappyHourStrategy {
 
-    public static final double DISCOUNT_COEFFICIENT = 0.00;
+    public static final double DISCOUNT_COEFFICIENT = 0.50;
 
     @Override
     public double calculateNewPrice(Beer beer) {
