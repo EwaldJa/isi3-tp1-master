@@ -15,7 +15,9 @@ J'ai simplement créé `4 méthodes statiques` dans la classe Calculette, qui pr
 
 Dans la classe `Main`, j'ai modifié un peu la méthode `main` pour qu'après avoir vérifié si la chaîne correspondant à l'opérateur souhaitée est bien d'une longueur de 1, on cherche l'opérateur avec un `switch...case`. Si le caractère entré n'est pas un opérateur, on affiche un message d'erreur à l'utilisateur, sinon le résultat de l'opération.
 
-Très simple à mettre en place (il ne m'a fallu que quelques minutes), cette architecture est néanmoins `très difficile à faire évoluer`, puisqu'il va falloir `modifier les 2 classes` à chaque évolution, et n'est pas très propre.
+Très simple à mettre en place (il ne m'a fallu que quelques minutes), cette architecture est néanmoins `très difficile à faire évoluer`, puisqu'il va falloir `modifier les 2 classes` à chaque évolution, et n'est pas très propre. Le diagramme UML ci-dessous montre bien la dépendance à la méthode `main` pour déterminer quelle méthode de la `Calculette` utiliser.
+
+![uml_tp1a-q1](img/tp1a-q1.png)
 
 ## Exercice 2
 *Expliquer le code ajouté, présentez votre solution (diagramme UML ou texte), conclusion(s) ?*
